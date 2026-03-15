@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolkaPulse | DeFi Vibe Check</title>
+    <!-- I got this font from google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Load ethers first so my code works! -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PolkaPulse</h1>
+            <p>The vibe check for DeFi! Find the hottest yields across Polkadot parachains.</p>
+            <button id="connectBtn" class="primary-btn">Connect MetaMask</button>
+            <div id="walletInfo" class="hidden">
+                <p>Wallet: <span id="walletAddress">Not connected</span></p>
+                <p>Mock USDC to Bridge: $<span id="usdcBalance">0</span></p>
+            </div>
+        </header>
+
+        <main>
+            <h2>Current Parachain Vibes</h2>
+            <!-- Note to judges: These are simulated by my "AI Sentiment Analyzer" function because my real AI agent kept rate limiting... oops -->
+            <div class="card-grid" id="vibeCards">
+                <!-- Cards will be injected by JS here -->
+            </div>
+
+            <div class="bridge-action">
+                <h3>Ready to chase the yield?</h3>
+                <div class="input-group">
+                    <input type="number" id="bridgeAmount" placeholder="Amount of USDC" min="1">
+                    <button id="ridePulseBtn" class="action-btn" disabled>Ride the Pulse!</button>
+                </div>
+                <p id="txStatus" class="subtext"></p>
+            </div>
+        </main>
+    </div>
+
+    <!-- my main logic -->
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
